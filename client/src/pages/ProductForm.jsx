@@ -41,11 +41,11 @@ export default function ProductForm({ refreshList }) {
 
   return (
     <>
-      <div className="page">
+      <div>
         <div className="content-box">
           <form className="form" onSubmit={handleSubmit}>
             <h2 className="heading">Product Form</h2>
-            <strong>Name</strong>
+            <label>Name</label>
             <input
               type="text"
               name="name"
@@ -53,7 +53,7 @@ export default function ProductForm({ refreshList }) {
               onChange={handleChange}
             />
             <br />
-            <strong>Flavour</strong>
+            <label>Flavour</label>
             <input
               type="text"
               name="flavour"
@@ -61,7 +61,7 @@ export default function ProductForm({ refreshList }) {
               onChange={handleChange}
             />
             <br />
-            <strong>Gram's</strong>
+            <label>Gram's</label>
             <input
               type="text"
               name="gram"
@@ -69,7 +69,7 @@ export default function ProductForm({ refreshList }) {
               onChange={handleChange}
             />
             <br />
-            <strong>Price</strong>
+            <label>Price</label>
             <input
               type="text"
               name="price"

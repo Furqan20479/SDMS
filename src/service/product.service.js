@@ -5,7 +5,7 @@ import Product from "../model/product.schema.js";
 class ProductService extends BaseService {
 
     constructor() {
-        super(Product);
+        super(Product); 
     }
 
     // Create Product

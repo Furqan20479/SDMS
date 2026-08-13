@@ -20,7 +20,7 @@ class ProductController {
         });
     } catch (error) {
         res.status(400).json({
-        message: error.message || "Addition Error",
+        message: error.message || "GET Error",
       });
     }
 
@@ -34,7 +34,7 @@ class ProductController {
         });
     } catch (error) {
           res.status(400).json({
-        message: error.message || "Addition Error",
+        message: error.message || "GET Error",
       });
     }
   };
@@ -46,7 +46,7 @@ class ProductController {
         
     } catch (error) {
          res.status(400).json({
-        message: error.message || "Addition Error",
+        message: error.message || "Updation Error",
       });
     }
   };
@@ -57,7 +57,7 @@ class ProductController {
         res.status(200).json({ message: "Product deleted successfully", data:deleted });
     } catch (error) {
           res.status(400).json({
-        message: error.message || "Addition Error",
+        message: error.message || "Deletion Error",
       });
     }
   };

@@ -10,8 +10,8 @@ export default function Home() {
               Shalimar Garden. I have been working with the MERN stack for about
               one and a half to two years. In this time, I have designed,
               developed, and maintained web applications, using React for the
-              front end and Node.js for the back end. I focus on a clean
-              separation of concerns, and I am passionate about creating clean,
+              FrontEnd and Node.js for the BackEnd. I focus on a clean
+              separation of concerns,I am passionate about creating clean,
               efficient, and user-friendly web solutions."
             </p>
           </div>
