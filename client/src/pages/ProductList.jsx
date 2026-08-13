@@ -29,21 +29,22 @@ export default function ProductList(){
     <div>
         <input type="search" value={search} onChange={(e)=>setSearch(e.target.value)} />
     </div>
-        <div>
+        <div className="list">
             {filterProducts?.map(product=>(
                 <div key={product._id}>
                     <p><strong>Product Name</strong> {product.name}</p> 
                     <p><strong>Product Flavour</strong> {product.flavour}</p> 
                     <p><strong>Product Gram's</strong> {product.gram}</p> 
                     <p><strong>Product Price</strong> {product.price}</p>
-                    <button className="btn-btn-primary" onClick={()=> navigate("/productForm",{state:product}) }>Edit</button> 
-                    <button className="btn-btn-primary" onClick={()=> handleDelete(product._id)}>Delete</button> 
+                    <button className="btn" onClick={()=> navigate("/productForm",{state:product}) }>Edit</button> 
+                    <button className="btn" onClick={()=> handleDelete(product._id)}>Delete</button> 
                 </div>
-            ))};
+            ))}
+<div className="content-box">
+            <button className="btn" onClick={()=>navigate("/productForm")}>Back To Form</button>
+            <button className="btn" onClick={()=>navigate("/")}>Back To Home</button>
 
-            <button className="btn-btn-primary" onClick={()=>navigate("/productForm")}>Back To Form</button>
-            <button className="btn-btn-primary" onClick={()=>navigate("/")}>Back To Home</button>
-
+</div>
         </div>
     
     </>);

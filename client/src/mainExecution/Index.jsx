@@ -2,6 +2,7 @@ import ProductForm from "../pages/ProductForm";
 import ProductList from "../pages/ProductList";
 import { useState } from "react";
 import {Routes, Route} from "react-router-dom";
+import Home from "../pages/Home";
 
 
 export default function Index(){
@@ -14,8 +15,8 @@ export default function Index(){
     <>
     
     <Routes>
-        {/* <Route path="/" element={<Home />}/> */}
-        <Route path="/" element={<ProductForm refreshList={refreshList}/>}/>
+        <Route path="/" element={<Home />}/>
+        <Route path="/productForm" element={<ProductForm refreshList={refreshList}/>}/>
         <Route path="/productList" element={<ProductList key={refreshFlag}/>}/>
     </Routes>
     </>
