@@ -18,6 +18,7 @@ export default function ProductList(){
     const handleDelete = async (id)=>{
         await productServices.del(id);
         
+        
     };
     
     const filterProducts = data?.filter(product=>
@@ -49,5 +50,12 @@ export default function ProductList(){
     
     </>);
 }
+
+
+
+
+
+
+
 
 
