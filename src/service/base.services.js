@@ -13,6 +13,10 @@ class BaseService {
         const data = await this.service.find(filter);
         return data;
     };
+    getById = async (id) => {
+    const data = await this.service.findById(id);
+    return data;
+};
 
     update = async (id, data) => {
         const updatedData = await this.service.findByIdAndUpdate(

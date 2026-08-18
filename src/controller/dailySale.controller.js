@@ -20,7 +20,7 @@ class DailySaleController {
 
     getSale = async (req, res) => {
         try {
-            const sale = await dailySaleServices.getSale(req.body);
+            const sale = await dailySaleServices.getSale();
 
             return res.status(200).json({
                 msg: "Sales Found",

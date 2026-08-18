@@ -9,16 +9,15 @@ class DailySaleServices extends BaseService{
     addSale = async(data)=>{
         return await this.add(data);
     };
-    getSale = async(filter = {})=>{
-        return await this.get(filter).populate("product");
+  getSale = async (filter = {}) => {
+    return await this.service.find(filter).populate("product");
+};
 
-    };
-    getById = async(id)=>{
-        return await this.DailySale.getById(id).populate("product");
-
-    };
+getById = async (id) => {
+    return await this.service.findById(id).populate("product");
+};
     updateSale = async(id,data)=>{
-        const updatedSale = await this.update(id,data,{new:true});
+        const updatedSale = await this.update(id,data);
         if(!updatedSale){
             console.log("Updation Failed");
         }
