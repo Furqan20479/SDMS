@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import Product from "./product.schema.js";
 
 
 // DailySale mein Product ka data duplicate nahi karna, sirf Product ki _id reference rakhni hai.❤️

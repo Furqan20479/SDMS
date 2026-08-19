@@ -14,27 +14,50 @@ export default function DailySaleList() {
 
   return (
     <>
-      <div className="content">
-        <div className="card">
+      <div className="hierarchy-wrapper">
+        <div className="hierarchy">
           {data?.map((sale) => (
             <div key={sale._id}>
-              <strong>Date:{sale.date}</strong>
-              <strong>Booker:{sale.booker}</strong>
-              <strong>Shop:{sale.shop}</strong>
-              <strong>
+              <div className="list-item">
+            <label className="lable"> Date:</label>
+             {new Date(sale.date).toLocaleDateString("en-GB")}
+              </div>
+              <div className="list-item">
+                 <label className="lable"> Booker:</label>
+              {sale.booker}
+              </div>
+              <div className="list-item">
+              Shop:{sale.shop}
+              </div>
+              <div className="list-item">
+             
                 Product:
                 {sale.product?.name} -{sale.product?.flavour} -
                 {sale.product?.gram}G
-              </strong>
-              <strong>Cartons:{sale.cartons}</strong>
-              <strong>Pieces:{sale.pieces}</strong>
-              <strong>Remarks:{sale.remarks}</strong>
-              <button
+              
+              </div>
+<div className="list-item">
+              Cartons:{sale.cartons}
+
+</div>
+<div className="list-item">
+
+             Pieces:{sale.pieces}
+</div>
+<div className="list-item">
+  
+             Remarks:{sale.remarks}
+</div>
+<br />
+<div className="button-group">
+              <button className="button"
                 onClick={() => navigate("/daily-sale-form", { state: sale })}
               >
                 Edit
               </button>
-              <button onClick={() => handleDelete(sale._id)}>Delete</button>
+              
+              <button className="button" onClick={() => handleDelete(sale._id)}>Delete</button>
+              </div>
             </div>
           ))}
         </div>

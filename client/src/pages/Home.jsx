@@ -1,9 +1,9 @@
 export default function Home() {
   return (
     <>
-      <h2 className="heading">Home Page</h2>
-      <div className="content-box">
-        <div className="page">
+      <div className="hierarchy-wrapper">
+        <div className="hierarchy">
+      <h2 className="title">Home Page</h2>
           <div>
             <p>
               "Hello, my name is Shahzaib Furgan, and I live in Lahore, near

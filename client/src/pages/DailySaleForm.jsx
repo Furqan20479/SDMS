@@ -68,27 +68,34 @@ export default function DailySaleForm({ refreshList }) {
 
   return (
     <>
-      <div className="card">
+    <div className="hierarchy-wrapper">
+    <div className="hierarchy">
+     
+        <div className="neu-title">Sales Form</div>
         <form onSubmit={handleSubmit}>
-          <input
+          <label className="neu-subtitle">Date</label>
+          <input className="neu-input" 
             type="date"
             name="date"
             value={values.date}
             onChange={handleChange}
           />
-          <input
+          <label className="neu-subtitle">Booker</label>
+          <input className="neu-input"
             type="text"
             name="booker"
             value={values.booker}
             onChange={handleChange}
           />
-          <input
+          <label className="neu-subtitle">Shop</label>
+          <input className="neu-input"
             type="text"
             name="shop"
             value={values.shop}
             onChange={handleChange}
           />
-          <select name="product" value={values.product} onChange={handleChange}>
+          <label className="neu-subtitle">Products</label>
+          <select className="select" name="product" value={values.product} onChange={handleChange}>
             <option value="">Select Product</option>
 
             {products.map((product) => (
@@ -97,33 +104,40 @@ export default function DailySaleForm({ refreshList }) {
               </option>
             ))}
           </select>
-          <input
+          <label className="neu-subtitle">Cartons</label>
+          <input className="neu-input"
             type="number"
             name="cartons"
             value={values.cartons}
             onChange={handleChange}
           />
-          <input
+          <label className="neu-subtitle">Pieces</label>
+          <input className="neu-input"
             type="number"
             name="pieces"
             value={values.pieces}
             onChange={handleChange}
           />
-          <input
+          <label className="neu-subtitle">Remarks</label>
+          <input className="neu-input"
             type="text"
             name="remarks"
             value={values.remarks}
             onChange={handleChange}
           />
-          <button type="submit" className="btn">
+          <br />
+          <div class="button-group">
+          <button type="submit" className="neu-button">
             {isEdit ? "Edit" : "Add"}
           </button>
+          </div>
         </form>
         <div>
-          <button onClick={() => navigate("/daily-sale-list")}>
+          <button className="neu-button" onClick={() => navigate("/daily-sale-list")}>
             Sale List
           </button>
         </div>
+      </div>
       </div>
     </>
   );

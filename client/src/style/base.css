@@ -1,206 +1,705 @@
+/* ================================
+   1. GLOBAL VARIABLES
+================================ */
+
+:root {
+
+    /* Overall Background */
+    --bg-color: #e0e0e0;
+
+    /* Main Surface / Card */
+    --surface-color: #e0e0e0;
+
+    /* Text */
+    --text-primary: #333333;
+    --text-secondary: #888888;
+    --text-light: #aaaaaa;
+
+    /* Accent */
+    --accent-color: #a33b3b;
+
+    /* Input */
+    --input-bg: #e0e0e0;
+
+    /* Border Radius */
+    --radius-small: 10px;
+    --radius-medium: 15px;
+    --radius-large: 25px;
+
+    /* Shadows */
+    --shadow-raised:
+        8px 8px 16px rgba(163, 163, 163, 0.6),
+        -8px -8px 16px rgba(255, 255, 255, 0.8);
+
+    --shadow-inset:
+        inset 6px 6px 12px rgba(163, 163, 163, 0.5),
+        inset -6px -6px 12px rgba(255, 255, 255, 0.8);
+
+    /* Transition */
+    --transition: 0.25s ease;
+}
+
+
+/* ================================
+   2. OVERALL BACKGROUND
+================================ */
+
+.background {
+
+    background: var(--bg-color);
+
+    min-height: 100vh;
+}
+
+
+/* ================================
+   3. MAIN FORM / CARD
+================================ */
+
 .card {
-  width: 400px;
-  min-height: 200px;
 
-  margin: 50px auto;
+    background: var(--surface-color);
 
-  padding: 30px;
+    border-radius: var(--radius-large);
 
-  background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    box-shadow: var(--shadow-raised);
 
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
+    padding: 30px;
 
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-
-  transition: all 0.3s ease;
-
-  cursor: pointer;
 }
 
-.card:hover {
-  filter: brightness(0.92);
-  transform: translateY(-3px);
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-.heading {
-  text-align: center;
-}
+/* ================================
+   4. INPUTS
+================================ */
 
-.btn {
-  padding: 10px 22px;
-  border: none;
-  border-radius: 8px;
-
-  background: #2563eb;
-  color: white;
-
-  font-size: 15px;
-  font-weight: 500;
-
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  opacity: 0.75;
-  transform: translateY(-2px);
-}
-.table-wrapper {
-  width: 100%;
-}
-
-.table-wrapper h2 {
-  margin-bottom: 25px;
-}
-
-.table-wrapper form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.table-wrapper form strong {
-  margin-top: 8px;
-}
-
-.table-wrapper form input {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px 12px;
-  border: 1px solid #ddd;
-  border-radius: 7px;
-}
-
-.table-wrapper .btn {
-  width: fit-content;
-  margin-top: 15px;
-}
-.navbar {
-  width: 100%;
-  height: 60px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 30px;
-  box-sizing: border-box;
-
-  background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-.navbar h2 {
-  margin: 0;
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  opacity: 0.6;
-}
-.content-box {
-  width: calc(100% - 20px);
-  margin: 0 10px;
-  padding: 10px;
-
-  box-sizing: border-box;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: #f5f5f5;
-}
 .input {
-  display: block;
-  width: 80%;
-  margin: 10px auto;
-  padding: 10px;
-  box-sizing: border-box;
 
-  text-align: center;
+    width: 100%;
 
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-form {
-  width: 400px;
-  margin: 20px auto;
-  padding: 25px;
+    background: var(--input-bg);
 
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+    color: var(--text-primary);
 
-  background: #f8f9fa;
+    border: none;
 
-  border: 1px solid #ddd;
-  border-radius: 12px;
+    outline: none;
 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-medium);
 
-  box-sizing: border-box;
+    padding: 12px 15px;
+
+    box-shadow: var(--shadow-inset);
+
+    transition: var(--transition);
 }
 
-form label {
-  font-weight: 600;
-  margin-top: 5px;
+
+/* Input Focus */
+
+.input:focus {
+
+    box-shadow:
+        inset 4px 4px 8px rgba(163, 163, 163, 0.5),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.8);
 }
 
-form input {
-  width: 100%;
-  padding: 10px;
 
-  border: 1px solid #ccc;
-  border-radius: 6px;
+/* ================================
+   5. BUTTONS
+================================ */
 
-  box-sizing: border-box;
+.button {
+
+    background: var(--surface-color);
+
+    color: var(--text-primary);
+
+    border: none;
+
+    border-radius: var(--radius-medium);
+
+    padding: 8px 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-raised);
+
+    transition: var(--transition);
 }
 
-form input:focus {
-  outline: none;
-  border-color: #555;
+
+/* Button Hover */
+
+.button:hover {
+
+    box-shadow:
+        5px 5px 10px rgba(163, 163, 163, 0.5),
+        -5px -5px 10px rgba(255, 255, 255, 0.8);
+
+    transform: translateY(-1px);
 }
 
-form button {
-  width: fit-content;
-  margin: 15px auto 0;
+
+/* Button Active */
+
+.button:active {
+
+    box-shadow: var(--shadow-inset);
+
+    transform: translateY(0);
 }
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* ================================
+   6. TYPOGRAPHY
+================================ */
+
+.title {
+
+    color: var(--text-primary);
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+}
+
+
+.subtitle {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+}
+
+
+.label {
+
+    color: var(--text-primary);
+
+    font-size: 14px;
+
+    font-weight: 600;
+    text-align: center;
+}
+
+
+.text {
+
+    color: var(--text-secondary);
+
+}
+
+
+/* ================================
+   7. SMALL CONTROLS
+================================ */
+
+.small-control {
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+}
+
+
+.small-control input {
+
+    accent-color: var(--accent-color);
+
+}
+
+
+.link {
+
+    color: var(--accent-color);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.link:hover {
+
+    text-decoration: underline;
+}
+
+/* ================================
+   8. NAVIGATION BAR
+================================ */
+
+.navbar {
+
+    width: 98%;
+
+    background: var(--surface-color);
+
+    padding: 15px 30px;
+
+    border-radius: 0 0 var(--radius-large) var(--radius-large);
+
+    box-shadow: var(--shadow-raised);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    transition: var(--transition);
+}
+
+
+/* Navbar Brand */
+
+.navbar-brand {
+
+    color: var(--text-primary);
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+/* Navbar Links Container */
+
+.navbar-links {
+
+    display: flex;
+    text-align: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+/* Navbar Link */
+
+.navbar-link {
+
+    color: var(--text-secondary);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding: 10px 15px;
+
+    border-radius: var(--radius-medium);
+
+    transition: var(--transition);
+}
+
+
+/* Navbar Link Hover */
+
+.navbar-link:hover {
+
+    color: var(--text-primary);
+
+    box-shadow: var(--shadow-raised);
+
+}
+
+
+/* Active Navbar Link */
+
+.navbar-link.active {
+
+    color: var(--accent-color);
+
+    box-shadow: var(--shadow-inset);
+
+}
+
+
+/* Navbar Button */
+
+.navbar-button {
+
+    background: var(--surface-color);
+
+    color: var(--text-primary);
+
+    border: none;
+
+    border-radius: var(--radius-medium);
+
+    padding: 10px 18px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-raised);
+
+    transition: var(--transition);
+}
+
+
+/* Navbar Button Hover */
+
+.navbar-button:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+/* Navbar Button Active */
+
+.navbar-button:active {
+
+    box-shadow: var(--shadow-inset);
+
+    transform: translateY(0);
+
+}
+
+/* ================================
+   9. SELECT
+================================ */
+
+.select {
+
+    width: 100%;
+
+    background: var(--input-bg);
+
+    color: var(--text-primary);
+
+    border: none;
+
+    outline: none;
+
+    border-radius: var(--radius-medium);
+
+    padding: 12px 15px;
+
+    box-shadow: var(--shadow-inset);
+
+    transition: var(--transition);
+
+    cursor: pointer;
+
+    appearance: none;
+}
+
+
+/* Select Focus */
+
+.select:focus {
+
+    box-shadow:
+        inset 4px 4px 8px rgba(163, 163, 163, 0.5),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+}
+/* ================================
+   10. SELECT OPTIONS
+================================ */
+
+.select-option {
+
+    background: var(--input-bg);
+
+    color: var(--text-primary);
+
+    padding: 10px;
+
+    font-size: 14px;
+
+}
+/* ================================
+   11. LIST
+================================ */
+
 .list {
-  width: 90%;
-  margin: 20px auto;
-  padding: 15px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    width: 100%;
 
-  background: #f5f5f5;
+    background: var(--surface-color);
+
+    border-radius: var(--radius-large);
+
+    padding: 20px;
+
+    box-shadow: var(--shadow-raised);
+
 }
+
+
+/* List Item */
 
 .list-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  padding: 12px 15px;
+    background: var(--surface-color);
 
-  background: white;
-  border-radius: 8px;
+    color: var(--text-primary);
 
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 15px 20px;
+
+    border-radius: var(--radius-medium);
+
+    margin-bottom: 12px;
+
+    box-shadow: var(--shadow-raised);
+
+    transition: var(--transition);
+
+}
+
+
+/* Last Item */
+
+.list-item:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* List Item Hover */
+
+.list-item:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+/* Active List Item */
+
+.list-item.active {
+
+    color: var(--accent-color);
+
+    box-shadow: var(--shadow-inset);
+
+}
+.hierarchy-wrapper {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background: var(--bg-color);
+}
+.hierarchy {
+
+    width: 50%;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background: var(--surface-color);
+
+    border-radius: var(--radius-large);
+
+    box-shadow: var(--shadow-raised);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+}
+/* ================================
+   NEUMORPHIC PAGE
+================================ */
+
+.neu-page {
+
+    min-height: 100vh;
+
+    background: var(--bg-color);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   MAIN CIRCLE / WINDOW
+================================ */
+
+.neu-circle {
+
+    width: 520px;
+
+    min-height: 520px;
+
+    background: var(--surface-color);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 70px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        20px 20px 40px rgba(163, 163, 163, 0.45),
+        -20px -20px 40px rgba(255, 255, 255, 0.95),
+        inset 8px 8px 16px rgba(163, 163, 163, 0.12),
+        inset -8px -8px 16px rgba(255, 255, 255, 0.75);
+
+}
+.neu-input {
+
+    width: 100%;
+
+    height: 52px;
+
+    box-sizing: border-box;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 16px;
+
+    background: var(--input-bg);
+
+    color: var(--text-primary);
+
+    padding: 0 20px;
+
+    font-size: 15px;
+
+    box-shadow:
+        inset 6px 6px 12px rgba(163, 163, 163, 0.28),
+        inset -6px -6px 12px rgba(255, 255, 255, 0.9);
+
+    transition: var(--transition);
+}
+
+
+.neu-input:focus {
+
+    box-shadow:
+        inset 3px 3px 7px rgba(163, 163, 163, 0.3),
+        inset -3px -3px 7px rgba(255, 255, 255, 0.9);
+
+}
+.neu-button {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 16px;
+
+    background: var(--surface-color);
+
+    color: var(--text-primary);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        7px 7px 14px rgba(163, 163, 163, 0.4),
+        -7px -7px 14px rgba(255, 255, 255, 0.9);
+
+    transition: var(--transition);
+}
+
+
+.neu-button:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+.neu-button:active {
+
+    box-shadow:
+        inset 5px 5px 10px rgba(163, 163, 163, 0.3),
+        inset -5px -5px 10px rgba(255, 255, 255, 0.9);
+
+    transform: translateY(0);
+
+}
+.title {
+
+    color: var(--text-primary);
+  font-size: 15px;
+
+    margin: 0 0 30px;
+
+
+}
+
+
+.neu-subtitle {
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+
+    margin: 0 0 30px;
+
+}
+.neu-form {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
 }
