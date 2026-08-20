@@ -22,6 +22,14 @@ export default function Navbar() {
                     Daily Sale List
                 </a>
 
+                <a className="navbar-link" href="/productForm">
+                    Product Form 
+                </a>
+
+                <a className="navbar-link" href="/productList">
+                    Product List
+                </a>
+
                 <button className="navbar-button">
                     Logout
                 </button>

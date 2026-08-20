@@ -1,22 +1,53 @@
 import mongoose from "mongoose";
 
+const dailySaleSchema = new mongoose.Schema(
+    {
+        date: {
+            type: Date,
+            default: Date.now
+        },
 
-// DailySale mein Product ka data duplicate nahi karna, sirf Product ki _id reference rakhni hai.❤️
+        booker: {
+            type: String,
+            required: true
+        },
 
+        shop: {
+            type: String,
+            required: true
+        },
 
-const dailySaleSchema = new mongoose.Schema({
-    date:{type:Date, default:Date.now},
-    booker:{type:String,required:true},
-    shop:{type:String,required:true},
-    product:{type:mongoose.Schema.Types.ObjectId,
-        ref:"Product",
-        required:true
+        products: [
+            {
+                product: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: "Product",
+                    required: true
+                },
+
+                pieces: {
+                    type: Number,
+                    required: true,
+                    min: 1
+                }
+            }
+        ],
+
+        totalPieces: {
+            type: Number,
+            default: 0
+        },
+
+        amount: {
+            type: Number,
+            default: 0
+        }
     },
-    cartons:{type:Number,required:true},
-    pieces:{type:Number,required:true},
-    remarks:{type:String,required:true},
-});
+    {
+        timestamps: true
+    }
+);
 
 const DailySale = mongoose.model("DailySale", dailySaleSchema);
-export default DailySale;
 
+export default DailySale;
